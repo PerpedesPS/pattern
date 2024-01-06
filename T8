@@ -1,0 +1,18 @@
+rows = 9   # number of rows to print
+midpoint = (rows // 2) + 1   # the row number at which to start decrementing
+incrementer = 1   # the amount by which to increment the number of stars printed
+stars_to_print = 1   # initialize number of stars to print in each row
+stars = []   # list to store the stars printed in each row
+
+# loop through each row and add stars to the list
+for row in range(1, rows + 1):
+    stars.append('*' * stars_to_print)
+
+    # update the stars_to_print variable based on our increment and midpoint
+    if row >= midpoint:
+        incrementer = -1
+    stars_to_print += incrementer
+
+# loop through the list of stars and print each row
+for row in stars:
+    print(row.rjust(midpoint))   # print the row, right-aligned to the midpoint
